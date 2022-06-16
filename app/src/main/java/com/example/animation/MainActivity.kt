@@ -1,9 +1,7 @@
 package com.example.animation
 
 import android.os.Bundle
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.view.animation.ScaleAnimation
+import android.view.animation.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animation.databinding.ActivityMainBinding
@@ -19,9 +17,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setAnim() {
-        binding.btnAnim.setOnClickListener {
+        binding.btnAnimAlpha.setOnClickListener {
+            startAlphaAnim()
+        }
+        binding.btnAnimMultiple.setOnClickListener {
+            startMultipleAnimation()
+        }
+        binding.btnAnimRotate.setOnClickListener {
+            startRotateAnimation()
+        }
+        binding.btnAnimScale.setOnClickListener {
             startScaleAnimation()
         }
+        binding.btnAnimTranslate.setOnClickListener {
+            startTranslateAnimation()
+        }
+
     }
 
     private fun startAlphaAnim() {
@@ -64,4 +75,59 @@ class MainActivity : AppCompatActivity() {
         binding.txtAnim.startAnimation(anim2)
 
     }
+
+    private fun startTranslateAnimation() {
+        val anim = TranslateAnimation(
+            0f, -50f,
+            0f, -100f
+        )
+        anim.duration = 1000
+        anim.fillAfter = true
+        anim.interpolator = DecelerateInterpolator()
+
+        binding.txtAnim.startAnimation(anim)
+    }
+
+    private fun startRotateAnimation() {
+        val anim = RotateAnimation(0f, 360f)
+        anim.duration = 1000
+        anim.fillAfter = true
+
+        val anim2 = RotateAnimation(
+            0f, 360f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+        )
+        anim2.duration = 1000
+        anim2.fillAfter = true
+
+        binding.txtAnim.startAnimation(anim2)
+    }
+
+    private fun startMultipleAnimation() {
+        // Animation 1 =>
+        val anim1 = ScaleAnimation(
+            1f, 2f, 1f, 2f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 05f
+        )
+
+        // Animation 2 =>
+        val anim2 = RotateAnimation(
+            0f, 360f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+        )
+
+        // Animation Set =>
+        val animSet = AnimationSet(true)
+        animSet.addAnimation(anim1)
+        animSet.addAnimation(anim2)
+        animSet.duration = 2000
+        animSet.repeatCount = 2
+        animSet.fillAfter = true
+
+        binding.txtAnim.startAnimation(animSet)
+    }
+
 }
