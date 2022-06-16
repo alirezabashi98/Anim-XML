@@ -1,5 +1,6 @@
 package com.example.animation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.animation.*
 import android.widget.Toast
@@ -32,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnAnimTranslate.setOnClickListener {
             startTranslateAnimation()
         }
-
+        binding.btnOpenLottie.setOnClickListener {
+            startActivity(Intent(this, LottieActivity::class.java))
+        }
     }
 
     private fun startAlphaAnim() {
@@ -128,6 +131,10 @@ class MainActivity : AppCompatActivity() {
         animSet.fillAfter = true
 
         binding.txtAnim.startAnimation(animSet)
+    }
+
+    private fun userAnimationXML() {
+
     }
 
 }
