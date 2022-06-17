@@ -6,8 +6,9 @@ import android.view.animation.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animation.databinding.ActivityMainBinding
+import ir.dunijet.animation.ext.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

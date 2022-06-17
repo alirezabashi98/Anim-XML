@@ -1,12 +1,12 @@
 package com.example.animation
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.animation.adapter.RecyclerAdapter
 import com.example.animation.databinding.ActivityRecyclerBinding
+import ir.dunijet.animation.ext.BaseActivity
 
-class RecyclerActivity : AppCompatActivity() {
+class RecyclerActivity : BaseActivity() {
 
     private lateinit var binding: ActivityRecyclerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
