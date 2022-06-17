@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnOpenLottie.setOnClickListener {
             startActivity(Intent(this, LottieActivity::class.java))
         }
+        binding.btnRecyclerAnim.setOnClickListener {
+            startActivity(Intent(this, RecyclerActivity::class.java))
+        }
     }
 
     private fun startAlphaAnim() {

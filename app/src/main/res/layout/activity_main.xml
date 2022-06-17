@@ -105,6 +105,20 @@
         android:width="1dp"
         android:text="Open Animation Lottie"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@id/btn_recyclerAnim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ButtonStyle,HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_recyclerAnim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_weight="1"
+        android:width="1dp"
+        android:text="Open Animation RecyclerView"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
